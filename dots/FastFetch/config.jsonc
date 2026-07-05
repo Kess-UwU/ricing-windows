@@ -1,0 +1,131 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "source": "windows 11",
+    "color": {
+      "1": "#A6E3A1",
+      "2": "#A6E3A1",
+      "3": "#A6E3A1",
+      "4": "#A6E3A1",
+      "5": "#A6E3A1",
+      "6": "#A6E3A1",
+      "7": "#A6E3A1",
+      "8": "#A6E3A1",
+      "9": "#A6E3A1"
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "#6c7086",
+      "title": "#cba6f7"
+    },
+    "percent": {
+      "type": 3,
+      "color": {
+        "green": "#a6e3a1",
+        "yellow": "#f9e2af",
+        "red": "#f38ba8"
+      }
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": " ",
+      "color": {
+        "user": "#89b4fa",
+        "host": "#cba6f7"
+      }
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;2;108;112;134m••••••••••••••••••••••••••••••••••••••••••••••"
+    },
+    {
+      "type": "os",
+      "key": " OS        >",
+      "keyColor": "#89b4fa"
+    },
+    {
+      "type": "kernel",
+      "key": " Kernel    >",
+      "keyColor": "#f38ba8",
+      "format": "{sysname} {release}"
+    },
+    {
+      "type": "host",
+      "key": "󰌢 Device    >",
+      "keyColor": "#a6e3a1",
+      "format": "{family}"
+    },
+    {
+      "type": "uptime",
+      "key": "󰅐 Uptime    >",
+      "keyColor": "#fab387"
+    },
+    "break",
+    {
+      "type": "cpu",
+      "key": " CPU       >",
+      "keyColor": "#89b4fa",
+      "format": "{name}"
+    },
+    {
+      "type": "cpuusage",
+      "key": "󰘚 CPU Usage >",
+      "keyColor": "#cba6f7"
+    },
+    {
+      "type": "gpu",
+      "key": "󰾲 GPU       >",
+      "keyColor": "#f38ba8",
+      "format": "{name}"
+    },
+    "break",
+    {
+      "type": "memory",
+      "key": " Memory    >",
+      "keyColor": "#a6e3a1",
+      "format": "{used} / {total} ({percentage})"
+    },
+    {
+      "type": "disk",
+      "key": " Disk      >",
+      "keyColor": "#94e2d5",
+      "folders": "",
+      "format": "{size-used} / {size-total} ({size-percentage})",
+      "showExternal": true
+    },
+    "break",
+    // {
+    //   "type": "battery",
+    //   "key": "󰂄 Battery   >",
+    //   "keyColor": "#f9e2af",
+    //   "format": "{capacity} {status}"
+    // },
+    // {
+    //   "type": "wifi",
+    //   "key": "󰖩 Wi-Fi     >",
+    //   "keyColor": "#fab387",
+    //   "format": "{ssid}"
+    // },
+    // "break",
+    {
+      "type": "packages",
+      "key": "󰏖 Packages  >",
+      "keyColor": "#94e2d5"
+    },
+    {
+      "type": "processes",
+      "key": "󰍹 Processes >",
+      "keyColor": "#89dceb"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
+}
