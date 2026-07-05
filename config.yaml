@@ -1,0 +1,246 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+komorebi:
+  start_command: "komorebic start"
+  stop_command: "komorebic stop"
+  reload_command: "komorebic stop && komorebic start"
+bars:
+  status-bar:
+    enabled: true
+    screens: ['*']
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+    animation:
+      enabled: true
+      duration: 800
+    blur_effect:
+      enabled: false
+      dark_mode: false
+      round_corners: true
+      border_color: none
+    window_flags:
+      always_on_top: false
+      windows_app_bar: true
+    dimensions:
+      width: "100%"
+      height: 40
+    padding:
+      top: 9
+      left: 5
+      bottom: 5
+      right: 5
+    widgets:
+      left:
+        [
+          "home",
+          "cpu",
+          "memory",
+          "media",
+        ]
+      center:
+        [
+          "glazewm_workspaces",
+          "active_window",
+        ]
+      right:
+        [
+          "notes",
+          "clock",
+          "cava",
+          "volume",
+          "wifi",
+          "disk",
+          "power_menu"
+        ]
+widgets:
+  glazewm_workspaces:
+    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+    options:
+      offline_label: "GlazeWM Offline"
+      hide_if_offline: false
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 12
+      gradient: 1
+      reverse: 0
+      foreground: "#cba6f7"
+      gradient_color_1: '#cba6f7'
+      gradient_color_2: '#B4BEFE'
+      bars_number: 8
+      bar_spacing: 2
+      bar_width: 5
+      sleep_timer: 2
+      hide_empty: false
+  home:
+    type: "yasb.home.HomeWidget"
+    options:
+      label: "<span>\udb80\udf5c</span>"
+      menu_list:
+        - { title: "Home", path: "~" }
+        - { title: "Downloads", path: "C:\\Users\\HP\\Downloads"}
+        - { title: "Documents", path: "C:\\Users\\HP\\Documents"}
+        - { title: "Pictures", path: "C:\\Users\\HP\\Pictures"}
+        - { title: "Videos", path: "C:\\Users\\HP\\Videos"}
+      system_menu: true
+      power_menu: false
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: ""
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "<span>\udb80\udf87</span> {title}"
+      label_alt: "<span>\udb80\udf87</span> {title}"
+      hide_empty: true
+      callbacks:
+       on_left: "toggle_media_menu"
+       on_middle: "do_nothing"
+       on_right: "toggle_label"
+      max_field_size:
+        label: 50
+        label_alt: 50
+      show_thumbnail: false
+      controls_only: false
+      controls_left: true
+      thumbnail_alpha: 50
+      thumbnail_padding: 0
+      thumbnail_corner_radius: 8
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+  clock:
+    type: "yasb.clock.ClockWidget"
+    options:
+      label: "<span>\ue769</span>{%I:%M %p}"
+      label_alt: "{%a, %d %b %H:%M:%S}"
+      timezones: []
+      callbacks:
+        on_left: "exec cmd.exe /c \"for /f \"delims=\" %a in ('curl -s wttr.in/Astrakhan?format^=%t') do msg * Погода в Астрахани: %a Фаренгейт\""
+  volume:
+    type: "yasb.volume.VolumeWidget"
+    options:
+      label: "<span>{icon}</span> {level}"
+      label_alt: "{volume}"
+      icons: ["\ueee8", "\uf026", "\uf027", "\uf027", "\uf028"]
+      audio_menu:
+        blur: True
+        round_corners: True
+        round_corners_type: 'normal'
+        border_color: '#45475a'
+        alignment: 'right'
+        direction: 'down'
+      callbacks:
+        on_left: "toggle_volume_menu"
+        on_right: "exec cmd.exe /c start ms-settings:sound"
+  power_menu:
+    type: "yasb.power_menu.PowerMenuWidget"
+    options:
+      label: "\uf011"
+      uptime: True
+      blur: False
+      blur_background: True
+      animation_duration: 250
+      button_row: 3
+      buttons:
+        signout: ["\udb80\udf43","Sign out"]
+        shutdown: ["\uf011","Shut Down"]
+        restart: ["\uead2","Restart"]
+        sleep: ["\udb82\udd04","Sleep"]
+        lock: ["\uf023","Lock"]
+        cancel: ["\udb81\udf3a","Cancel"]
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: ""
+      label_no_window: ""
+      label_icon: true
+      label_icon_size: 12
+      max_length: 20
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
+  disk:
+    type: "yasb.disk.DiskWidget"
+    options:
+        label: "<span>\uf473</span>"
+        label_alt: "<span>\uf473</span>"
+        group_label:
+          volume_labels: ["C", "D", "E", "F"]
+          show_label_name: true 
+          blur: True
+          round_corners: True
+          round_corners_type: "normal"
+          border_color: "System"
+          alignment: "right"
+          direction: "down"
+        callbacks:
+          on_left: "toggle_group"
+  cpu:
+    type: "yasb.cpu.CpuWidget"
+    options:
+      label: "<span>\uf4bc</span> {info[percent][total]}%"
+      label_alt: "<span>\uf437</span> {info[histograms][cpu_percent]}"
+      update_interval: 2000
+      histogram_icons: ['\u2581', '\u2581', '\u2582', '\u2583', '\u2584', '\u2585', '\u2586', '\u2587', '\u2588']
+      histogram_num_columns: 8
+      callbacks:
+        on_right: "exec cmd /c Taskmgr"
+  memory:
+    type: "yasb.memory.MemoryWidget"
+    options:
+      label: "<span>\uefc5</span> {virtual_mem_percent}%"
+      label_alt: "<span>\uefc5</span> {virtual_mem_used}/{virtual_mem_total}"
+      update_interval: 5000
+      callbacks:
+        on_left: "toggle_label"
+        on_middle: "do_nothing"
+        on_right: "do_nothing"
+  wifi:
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span>"
+      label_alt: "{wifi_name} {wifi_strength}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "exec cmd.exe /c start ms-settings:network"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      wifi_icons: ["\udb82\udd2e", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"]
+  notes:
+    type: "yasb.notes.NotesWidget"
+    options:
+      label: "<span>\udb82\udd0c</span> {count}"
+      label_alt: "{count} notes"
+    container_padding:
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+    menu:
+      blur: true
+      round_corners: true
+      round_corners_type: "normal"
+      border_color: "System"
+      alignment: "right"
+      direction: "down"
+      offset_top: 6
+      offset_left: 0
+      max_title_size: 150
+      show_date_time: true
+    icons:
+      note: "\udb82\udd0c"
+      delete: "\ue20d"
+    callbacks:
+      on_left: "toggle_menu"
+      on_middle: "do_nothing"
+      on_right: "toggle_label"
+    label_shadow:
+      enabled: true
+      color: "black"
+      radius: 3
