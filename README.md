@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <td>🖼️Qview</td>
-      <td>📊Yasb</td>
+      <td>🖼️Wallpaper pack</td>
     </tr>
     <tr>
       <td>📊YASB</td>
