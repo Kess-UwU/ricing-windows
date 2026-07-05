@@ -1,2 +1,2 @@
-# ricing-windows
-my dots files and options
+# rice windows 10
+
