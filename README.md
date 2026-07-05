@@ -1,3 +1,3 @@
-![Windows 10 rice](icon.png)
-
-
+<p align="center">
+  <img src="icon.png" alt="Widnows 10 rice">
+</p>
