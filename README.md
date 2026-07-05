@@ -1,3 +1,3 @@
-![Uploading icon.png…]()
-# rice windows 10
+![Windows 10 rice](icon.png)
+
 
