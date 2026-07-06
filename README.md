@@ -45,4 +45,20 @@
 * Git
 * JetBrains Mono Nerd Font
 
-## How to install
+## Network Settings
+
+```powershell
+ipconfig /flushdns
+
+netsh interface ipv4 set dns name="Ethernet 2" source=static address=1.1.1.1
+netsh interface ipv4 add dns name="Ethernet 2" address=1.0.0.1 index=2
+
+powershell -Command "Enable-NetAdapterBinding -Name 'Ethernet 2' -ComponentID 'ms_tcpip6'" 2>\$null
+netsh interface ipv6 set dns name="Ethernet 2" source=static address=2606:4700:4700::1111 2>\$null
+netsh interface ipv6 add dns name="Ethernet 2" address=2606:4700:4700::1001 index=2 2>\$null
+```
+
+> [!TIP]
+> If your network adapter has a different name, replace `name="Ethernet 2"` with your actual adapter name (e.g., `name="Ethernet"` or `name="Wi-Fi"`).
+
+
