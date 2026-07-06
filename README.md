@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon.png" alt="Widnows 10 rice">
+  <img src="icon.png" alt="Windows 10 rice">
 </p>
 
 <div align="center">
@@ -9,6 +9,8 @@
     <tr bgcolor="#f0f0f0">
       <th colspan="2">All apps & settings</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>🔳Tackyborders</td>
       <td>💻Win. Terminal</td>
@@ -30,7 +32,17 @@
       <td>⚙️Fastfetch</td>
     </tr>
     <tr>
-      <td colspan="2">           📶Network settings</td>
+      <td>🎮Steam</td>
+      <td>🌐Network settings</td>
     </tr>
   </tbody>
 </table>
+</div>
+
+## Requirements
+* Scoop & WinGet
+* Windows 10 / 11 (x64)
+* Git
+* JetBrains Mono Nerd Font
+
+## How to install
