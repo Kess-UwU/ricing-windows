@@ -39,13 +39,13 @@
 </table>
 </div>
 
-## Requirements
+# Requirements
 * Scoop & WinGet
 * Windows 10 / 11 (x64)
 * Git
 * JetBrains Mono Nerd Font
 
-## Network Settings
+# Network Settings
 
 ```powershell
 ipconfig /flushdns
@@ -61,4 +61,79 @@ netsh interface ipv6 add dns name="Ethernet 2" address=2606:4700:4700::1001 inde
 > [!TIP]
 > If your network adapter has a different name, replace `name="Ethernet 2"` with your actual adapter name (e.g., `name="Ethernet"` or `name="Wi-Fi"`).
 
+# How to install
+
+## 🛠️ Installation apps
+
+First, open **PowerShell as Administrator** and install Scoop if you don't have it yet:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
+irm https://scoop.sh | iex
+scoop bucket add extras
+scoop bucket add nerd-fonts
+```
+
+Now, run the specific command for each application you want to install:
+
+### 1. Core Tools & Fonts
+* **Git**
+  ```powershell
+  scoop install git
+  ```
+* **Fastfetch**
+  ```powershell
+  scoop install fastfetch
+  ```
+* **JetBrains Mono Nerd Font**
+  ```powershell
+  scoop install jetbrainsmono-nf
+  ```
+
+### 2. Interface, Bars & Tiling
+* **YASB** (Status bar)
+  ```powershell
+  scoop install yasb
+  ```
+* **GlazeWM / Rainmeter** (Window manager & widgets)
+  ```powershell
+  scoop install glazewm rainmeter
+  ```
+* **TaskbarX** (Taskbar centering tool)
+  ```powershell
+  scoop install taskbarx
+  ```
+
+### 3. Media & Viewers
+* **CAVA** (Audio visualizer via WinGet)
+  ```powershell
+  winget install karlstav.cava   
+  ```
+* **Qview** (Minimal image viewer)
+  ```powershell
+  scoop install qview
+  ```
+* **Brave browser**
+  ```powershell
+  scoop install brave
+  ```
+
+### 4. Manual Installation
+* **Tackyborders** — [Download from Official GitHub Releases](https://github.com/lukeyou05/tacky-borders/releases)
+* **Millenium for steam** — [Download from Official GitHub Releases](https://github.com/SteamClientHomebrew/Millennium/releases)
+
+## 🎮 Steam Theme Setup
+
+1. Open Steam and open the **Millennium** dashboard.
+2. Go to the themes section.
+3. Paste the following theme ID into the field:
+   ```text
+   zQndv1rI0FXLh3QTRgOL
+   ```
+4. Save the settings and reload Steam to apply the skin.
+
+## 🌐 Brave Browser Setup
+
+* Chrome Theme: [Catppuccin mocha theme](https://chromewebstore.google.com/detail/catppuccin-chrome-theme-m/bkkmolkhemgaeaeggcmfbghljjjoofoh)
+* Stylus file location: `dots/stylus` (Open Stylus -> **Import** -> Select this file)
 
