@@ -137,3 +137,126 @@ Now, run the specific command for each application you want to install:
 * Chrome Theme: [Catppuccin mocha theme](https://chromewebstore.google.com/detail/catppuccin-chrome-theme-m/bkkmolkhemgaeaeggcmfbghljjjoofoh)
 * Stylus file location: `dots/stylus` (Open Stylus -> **Import** -> Select this file)
 
+## 💧 Rainmeter & Mond Setup
+
+1. Install **Rainmeter** (via Scoop or official website).
+2. Download and install the **Mond** skin package.
+3. Right-click the Mond Clock skin -> **Edit skin** (this opens `Clock.ini`).
+4. Replace the entire code inside `Clock.ini` with my configuration below:
+
+<details>
+<summary><b>🎬 Click to expand my Clock.ini config</b></summary>
+
+```ini
+[Rainmeter]
+Update=1000
+Author=Connect-R
+BackgroundMode=2
+SolidColor=0,0,0,1
+DynamicWindowSize=1
+AccurateText=1
+MouseScrollUpAction=[!SetVariable Scale "(#Scale#+#ScrollMouseIncrement#)"][!WriteKeyValue Variables Scale "(#Scale#+#ScrollMouseIncrement#)"][!Refresh] 
+MouseScrollDownAction=[!SetVariable Scale "(#Scale#-#ScrollMouseIncrement# < 0.5 ? 0.5 : #Scale#-#ScrollMouseIncrement#)"][!WriteKeyValue Variables Scale "(#Scale#-#ScrollMouseIncrement# < 0.5 ? 0.5 : #Scale#-#ScrollMouseIncrement#)"][!Refresh] 
+LeftMouseDoubleClickAction=!ToggleConfig "Mond\Settings" "Settings.ini"
+
+[Variables]
+@include=#@#Variables.inc
+@include2=#@#Language\#Language#.inc
+Scale=1.06
+
+;-------------------------------------------------------------
+; TIME AND DATE MEASURES
+;-------------------------------------------------------------
+
+[MeasureTime]
+Measure=Time
+Format="%#Format#:%M"
+
+[MeasureAmPm]
+Measure=Time
+Format="%p"
+
+[MeasureDay]
+Measure=Time
+Format=%A
+Substitute=#Date#
+
+[MeasureDate]
+Measure=Time
+Format=%d  %B,  %Y.
+Substitute=#Date#
+
+;-------------------------------------------------------------
+; METERS (DISPLAY WITH CUSTOM COLOR AND LIGHT BLUE BORDER)
+;-------------------------------------------------------------
+
+[Meter24hClock]
+Meter=String
+MeasureName=MeasureTime
+StringAlign=Center
+StringCase=Upper
+FontFace=Jetbrains Mono
+FontColor=#TextColor#
+StringEffect=Border
+FontEffectColor=174,226,255,255
+FontSize=(14*#Scale#)
+X=(340*#Scale#)
+Y=(120*#Scale#)
+Text="- %1 -"
+AntiAlias=1
+Hidden=#Hidden#
+
+[Meter12hClock]
+Meter=String
+MeasureName=MeasureTime
+MeasureName2=MeasureAmPm
+StringAlign=Center
+StringCase=Upper
+FontFace=Jetbrains Mono
+FontColor=#TextColor#
+StringEffect=Border
+FontEffectColor=174,226,255,255
+FontSize=(14*#Scale#)
+X=(340*#Scale#)
+Y=(120*#Scale#)
+Text="- %1 %2 -"
+AntiAlias=1
+Hidden=#Hidden2#
+
+[MeterDay]
+Meter=String
+MeasureName=MeasureDay
+StringAlign=Center
+StringCase=Upper
+FontFace=Jetbrains Mono
+FontColor=#TextColor#
+StringEffect=Border
+FontEffectColor=174,226,255,255
+FontSize=(40*#Scale#)
+X=(340*#Scale#)
+Y=(0*#Scale#)
+Text="%1"
+InlineSetting=CharacterSpacing | 10 | 10
+AntiAlias=1
+DynamicVariables=1
+
+[MeterDate]
+Meter=String
+MeasureName=MeasureDate
+StringAlign=Center
+StringCase=Upper
+FontFace=Jetbrains Mono
+FontColor=#TextColor#
+StringEffect=Border
+FontEffectColor=174,226,255,255
+FontSize=(14*#Scale#)
+X=(340*#Scale#)
+Y=(75*#Scale#)
+Text="%1"
+AntiAlias=1
+```
+
+</details>
+
+5. Save the file and click **Refresh skin** in Rainmeter.
+
