@@ -12,31 +12,31 @@
   </thead>
   <tbody>
     <tr>
-      <td>🔳Tackyborders</td>
-      <td>💻Win. Terminal</td>
+      <td>🔳 Tackyborders</td>
+      <td>💻 Win. Terminal</td>
     </tr>
     <tr>
-      <td>🖼️Qview</td>
-      <td>🖼️Wallpaper pack</td>
+      <td>🖼️ Qview</td>
+      <td>🖼️ Wallpaper pack</td>
     </tr>
     <tr>
-      <td>📊YASB</td>
-      <td>💧Rainmeter</td>
+      <td>📊 YASB</td>
+      <td>💧 Rainmeter</td>
     </tr>
     <tr>
-      <td>🎵CAVA</td>
-      <td>💻TaskBarX</td>
+      <td>🎵 CAVA</td>
+      <td>💻 TaskBarX</td>
     </tr>
     <tr>
-      <td>🌐Brave</td>
-      <td>⚙️Fastfetch</td>
+      <td>🌐 Brave</td>
+      <td>⚙️ Fastfetch</td>
     </tr>
     <tr>
-      <td>🎮Steam</td>
-      <td>🌐Network settings</td>
+      <td>🎮 Steam</td>
+      <td>🌐 Network settings</td>
     </tr>
     <tr>
-      <td colspan="2>🧩GlazeWM</td>
+      <td colspan="2">🧩 GlazeWM</td>
     </tr>
   </tbody>
 </table>
@@ -262,4 +262,3 @@ AntiAlias=1
 </details>
 
 5. Save the file and click **Refresh skin** in Rainmeter.
-
