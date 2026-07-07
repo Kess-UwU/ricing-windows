@@ -35,6 +35,9 @@
       <td>🎮Steam</td>
       <td>🌐Network settings</td>
     </tr>
+    <tr>
+      <td colspan="2>🧩GlazeWM</td>
+    </tr>
   </tbody>
 </table>
 </div>
