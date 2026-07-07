@@ -36,7 +36,7 @@
       <td>🌐 Network settings</td>
     </tr>
     <tr>
-      <td colspan="2">🧩 GlazeWM</td>
+      <td colspan="2" align="center">🧩 GlazeWM</td>
     </tr>
   </tbody>
 </table>
@@ -261,4 +261,11 @@ AntiAlias=1
 
 </details>
 
+
 5. Save the file and click **Refresh skin** in Rainmeter.
+
+# Screenshot
+
+<p align="center">
+  <img src="screenshot1.png" alt="Windows 10 screenshoot">
+</p>
